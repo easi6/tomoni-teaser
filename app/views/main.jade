@@ -1,77 +1,130 @@
-.page-container.page-1
-  .header
+.nav
+  .nav-container
     .header-left.pull-left
-      h3 tomoni_teaser
+      img.logo(src="../images/tomoni_logo_blue.png")
     .header-right.pull-right
-      .copyright
-        p.text-blue Design and developed by Easi6.
+      nav.menu
+        ul.navi_menu
+          li.menu_item.pull-left
+            a.menu_link(href="#page-3") drop
+          li.menu_item.pull-left
+            a.menu_link(href="#page-4") discover
+          li.menu_item.pull-left
+            a.menu_link(href="#page-5") chat
+          li.menu_item 
+            a.menu_link(href="#page-6") share
       .social
-        button.btn.btn-fb
-        button.btn.btn-twt
+        .btns
+          button.btn.btn-fb
+          button.btn.btn-twt
+      .language
+        select.language
+          option us
+          option kr
+          option jp
+          option cn
+
+#page-1
   .maps
     #mapcanvas(ng-init="initialize()")
     .mapoverlay
-    .tomos
-      img(src="../images/map_img.png")
-  .contents
-    p.black-text <strong>Welcome to Tomoni, the first activity-based discovery app!</strong><br />Connect around activities in your neighborhood.
-  .bottom-line(style="border-bottom: solid 1px #333;")
+      img.mapoverlay(src="../images/dark_overlay_bg.png")
+  .tomos
+    .popup-area
+      .popups
+        .popup.popup-1(ng-show="show_popups[0]")
+          p.name jordan
+          p.message enhoying happy hour, 5-7!
+          .bottoms
+            p.notice Coming soong for iOS & Android.
+        .popup.popup-2(ng-show="show_popups[1]")
+          p.name jordan
+          p.message enhoying happy hour, 5-7!
+          .bottoms
+            p.notice Coming soong for iOS & Android.
+        .popup.popup-3(ng-show="show_popups[2]")
+          p.name jordan
+          p.message enhoying happy hour, 5-7!
+          .bottoms
+            p.notice Coming soong for iOS & Android.
+        .popup.popup-4(ng-show="show_popups[3]")
+          p.name jordan
+          p.message enhoying happy hour, 5-7!
+          .bottoms
+            p.notice Coming soong for iOS & Android.
+        .popup.popup-5(ng-show="show_popups[4]")
+          p.name jordan
+          p.message enhoying happy hour, 5-7!
+          .bottoms
+            p.notice Coming soong for iOS & Android.
+    .tomos-area
+      ul.tomos
+        li.tomo.tomo-1(ng-click="show_popup(0)")
+        li.tomo.tomo-2(ng-click="show_popup(1)")
+        li.tomo.tomo-3(ng-click="show_popup(2)")
+        li.tomo.tomo-4(ng-click="show_popup(3)")
+        li.tomo.tomo-5(ng-click="show_popup(4)")
+  .page-container.page-1
+    .contents
+      p.text-black.text-bold Welcome to Tomoni, the first activity-based discovery app!
+      p.text-black Connect around activities in your neighborhood.
+    .bottom-line(style="border-bottom: solid 1px #333;")
 
 .page-container.page-2
-  .page-right
-    .content-container
-      p.title.
-        Tomo will get<br />you dates.
-      p.content Tomo stays where you put it and make your<br />activities visible to all nearby users, then help<br />you communicate with your potential partners.
-      p.content No need to fill any forms. No need to pay to<br />get to meet new people.
-      p.content Just drop a tomo where you ans to hang out.
-  .page-left 
-    .content-container
-      img(src="../images/app_img_1.png")
-  .bottom-line(style="border-bottom: solid 1px #333;")
-
-.page-container.page-3
-  .page-right
-    .content-container
-      img(src="../images/app_img_2.png")
   .page-left
     .content-container
-      p.title.
-        Drop and discover<br />tomos around you.
-      p.content Tomo filters keep content interesting to you.
-  .bottom-line(style="border-bottom: solid 1px #333;")
-
-.page-container.page-4
+      p.title.text-light Tomo will get<br />you dates.
+      p.content.text-regular Tomo stays where you put it and make your activities visible to all nearby users, then help you communicate with your potential partners.
+      p.content.text-regular No need to fill any forms. No need to pay to get to meet new people.
+      p.content.text-regular Just drop a tomo where you ans to hang out.
   .page-right
     .content-container
-      p.title.
-        Find something<br/ >interesting?<br />Chat about it.
-      p.content Use chat to share details and meetup.
-  .page-left
-    .content-container
-      img(src="../images/app_img_3.png")
+      img(src="../images/illu/illu1_bg.png")
   .bottom-line(style="border-bottom: solid 1px #333;")
 
-.page-container.page-5
+#page-3.page-container.page-3
+  .page-left
+    .content-container
+      .img-area
+        img.popup(src="../images/illu/illu2_popup.png")
   .page-right
     .content-container
-      img(src="../images/app_img_4.png")
-  .page-left
-    .content-container
-      p.title.
-        Share your<br />activities on <br />Facebook and<br />Twitter.
-      p.content Get your friends involved<br />or meet new people.
+      p.title.text-light Drop and discover<br />tomos around you.
+      p.content.text-regular Tomo filters keep content interesting to you.
   .bottom-line(style="border-bottom: solid 1px #333;")
 
-.page-container.page-6
+#page-4.page-container.page-4
+  .page-left
+    .content-container
+      p.title.text-light Find something<br/ >interesting?<br />Chat about it.
+      p.content.text-regular Use chat to share details and meetup.
+  .page-right
+    .content-container
+      .img-area 
+        img.chat1(src="../images/illu/illu3_chat1.png")
+        img.chat2(src="../images/illu/illu3_chat2.png")
+        img.chat3(src="../images/illu/illu3_chat3.png")
+  .bottom-line(style="border-bottom: solid 1px #333;")
+
+#page-5.page-container.page-5
+  .page-left
+    .content-container
+      p.title.text-light Share your<br />activities on <br />Facebook and<br />Twitter.
+      p.content.text-regular Get your friends involved<br />or meet new people.
+  .page-right
+    .content-container
+      .img-area
+        img.fb(src="../images/illu/illu4_fb.png")
+        img.twt(src="../images/illu/illu4_tw.png")
+  .bottom-line(style="border-bottom: solid 1px #333;")
+
+#page-6.page-container.page-6
   .header
-    p.text-black Like us much?
-    p.title.text-green We will be coming soon!
+    p.text-light Like us much?
+    p.text-bold We will be coming soon!
   .teaser-images-container
     .img_container 
-      img(src="../images/teaser_1.png")
-      img(src="../images/teaser_2.png")
-      img(src="../images/teaser_3.png")
+      img(src="../images/illu/mocks.png")
 .bottom
   .bottom-content
     p.text-blue Follow us on

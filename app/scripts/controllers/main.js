@@ -3,6 +3,7 @@
 angular.module('homepageApp')
   .controller('MainCtrl', function ($scope, $http) {
     $scope.map = null;
+    $scope.show_popups = [false, false, true, false, false];
 
     $scope.initialize = function() {
       console.log('initialize!');
@@ -38,5 +39,11 @@ angular.module('homepageApp')
           $scope.map.setCenter(new_loc);
         }
       }).error(function(err) { console.log(err); return null;});
+    };
+
+    $scope.show_popup = function(popup_idx) {
+      for (var i=0; i < $scope.show_popups.length; i++) {
+        $scope.show_popups[i] = i == popup_idx;
+      }
     };
   });
