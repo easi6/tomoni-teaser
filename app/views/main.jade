@@ -1,18 +1,18 @@
 .nav
   .nav-container
     .header-left.pull-left
-      img.logo(src="../images/tomoni_logo_blue.png")
+      img.logo(src="../images/tomoni_logo_blue.png", ng-click="gotoPage(1)")
     .header-right.pull-right
       nav.menu
         ul.navi_menu
           li.menu_item.pull-left
-            a.menu_link(href="#page-3") drop
+            a.menu_link(ng-click="gotoPage(3)") drop
           li.menu_item.pull-left
-            a.menu_link(href="#page-4") discover
+            a.menu_link(ng-click="gotoPage(4)") discover
           li.menu_item.pull-left
-            a.menu_link(href="#page-5") chat
+            a.menu_link(ng-click="gotoPage(5)") chat
           li.menu_item 
-            a.menu_link(href="#page-6") share
+            a.menu_link(ng-click="gotoPage(6)") share
       .social
         .btns
           button.btn.btn-fb
@@ -80,15 +80,15 @@
   .page-right
     .content-container
       .img-area
-        img.drop1(src="../images/illu/illu1_parachute.png")
-        img.drop2(src="../images/illu/illu1_shadowdrop.png")
+        img#drop1(src="../images/illu/illu1_parachute.png")
+        img#drop2(src="../images/illu/illu1_shadowdrop.png")
   .bottom-line
 
 #page-3.page-container.page-3
   .page-left
     .content-container
       .img-area
-        img.popup(src="../images/illu/illu2_popup.png")
+        img#illu2_popup(src="../images/illu/illu2_popup.png")
   .page-right
     .content-container
       p.title.text-light Drop and discover<br />tomos around you.
@@ -103,9 +103,9 @@
   .page-right
     .content-container
       .img-area 
-        img.chat1(src="../images/illu/illu3_chat1.png")
-        img.chat2(src="../images/illu/illu3_chat2.png")
-        img.chat3(src="../images/illu/illu3_chat3.png")
+        img#chat1(src="../images/illu/illu3_chat1.png")
+        img#chat2(src="../images/illu/illu3_chat2.png")
+        img#chat3(src="../images/illu/illu3_chat3.png")
   .bottom-line
 
 #page-5.page-container.page-5
@@ -116,8 +116,8 @@
   .page-right
     .content-container
       .img-area
-        img.fb(src="../images/illu/illu4_fb.png")
-        img.twt(src="../images/illu/illu4_tw.png")
+        img.fb.illu4_fadein(src="../images/illu/illu4_fb.png")
+        img.twt.illu4_fadein(src="../images/illu/illu4_tw.png")
   .bottom-line
 
 #page-6.page-container.page-6

@@ -70,6 +70,12 @@ p {
     height: 60px;
     margin: auto;
     padding: 0px;
+    .header-left {
+      img.logo {
+        cursor: pointer;
+        z-index: 999;
+      }
+    }
     .header-right {
       margin: 0;
       width: 500px;
@@ -86,6 +92,7 @@ p {
           li.menu_item {
             margin-right: 15px;
             a, a:hover {
+              cursor: pointer;
               color: #929292;
               text-decoration: none;
             }
@@ -351,15 +358,15 @@ p {
         height: 600px;
         position: relative;
         background-image: url("../images/illu/illu1_bg.png");
-        .drop1 {
+        #drop1 {
           position: absolute;
           left: 152px;
-          top: 33px;
+          top: 0px;
         }
-        .drop2 {
+        #drop2 {
           position: absolute;
-          left: 198px;
-          top: 171px;
+          left: 218px;
+          top: 151px;
         }
       }
     }
@@ -375,12 +382,13 @@ p {
         width: 400px;
         height: 600px;
         background-image: url("../images/illu/illu2_bg.png");
-        img.popup {
+        #illu2_popup {
           width: 240px;
           height: 270px;
           top: 60px;
           left: 80px;
           position: absolute;
+          display: none;
         }
       }
     }
@@ -424,20 +432,23 @@ p {
         height: 600px;
         position: relative;
         background-image: url("../images/illu/illu3_bg.png");
-        img.chat1 {
+        img#chat1 {
           position: absolute;
           top: 194px;
           left: 131px;
+          display: none;
         }
-        img.chat2 {
+        img#chat2 {
           position: absolute;
           top: 269px;
           left: 82px;
+          display: none;
         }
-        img.chat3 {
+        img#chat3 {
           position: absolute;
           top: 343px;
           left: 249px;
+          display: none;
         }
       }
     }
@@ -465,11 +476,13 @@ p {
           position: absolute;
           top: 123px;
           left: 81px;
+          display: none;
         }
         img.twt {
           position: absolute;
           top: 123px;
           left: 226px;
+          display: none;
         }
       }
     }
