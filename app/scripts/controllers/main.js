@@ -40,7 +40,8 @@ function enable_scroll() {
 }
 
 angular.module('homepageApp')
-  .controller('MainCtrl', function ($scope, $location, $http) {
+  .controller('MainCtrl', function ($scope, $location, $translate, $http) {
+    $scope.translate = "en_US";
     $scope.map = null;
     $scope.show_popups = [false, false, true, false, false];
     $scope.is_scrolling = false;
@@ -103,6 +104,10 @@ angular.module('homepageApp')
           }
         }
       });
+    };
+
+    $scope.languageChange = function() {
+      $translate.uses($scope.translate);
     };
 
     $scope.scrollToPage = function(to_page) {

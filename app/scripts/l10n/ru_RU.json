@@ -1,0 +1,23 @@
+{
+  "MAP": "Обнаружить",
+  "CHAT": "Чат",
+  "CONVERSATIONS": "Cообщения",
+  "BACK": "Возвращаться",
+  "SEND": "Отправлять",
+  "TAKE_PHOTO": "Сфотографировать",
+  "PHOTO_LIB": "Выберите файл для загрузка.",
+  "CANCEL": "Oтмена",
+  "SETTING": "Hастройки Aккаунта",
+  "LOGOUT": "Bыйти",
+  "EDIT_PROFILE": "Редактировать Профиль",
+  "MOVE": "Переместить",
+  "MOVE_CONFIRM": "Pазмещать",
+  "SETTING_RADIUS" : "푸시알림 반경 설정",
+  "SETTING_TXT_RADIUS": "푸시알림 반경",
+  "MALE" : "Male",
+  "FEMALE" : "FEMALE",
+  "BIRTHDAY" : "Birthday",
+  "GENDER" : "Gender",
+  "CONFIRM" : "Confirm"
+}
+

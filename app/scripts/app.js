@@ -4,9 +4,10 @@ angular.module('homepageApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'pascalprecht.translate'
 ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $translateProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -15,4 +16,10 @@ angular.module('homepageApp', [
       .otherwise({
         redirectTo: '/'
       });
+
+      $translateProvider.useStaticFilesLoader({
+        prefix: 'scripts/l10n/',
+        suffix: '.json'
+      });
+      $translateProvider.preferredLanguage("en_US");
   });

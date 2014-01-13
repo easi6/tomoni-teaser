@@ -6,23 +6,23 @@
       nav.menu
         ul.navi_menu
           li.menu_item.pull-left
-            a.menu_link(ng-click="gotoPage(3)") drop
+            a.menu_link(ng-click="gotoPage(3)") {{ 'DROP' | translate }}
           li.menu_item.pull-left
-            a.menu_link(ng-click="gotoPage(4)") discover
+            a.menu_link(ng-click="gotoPage(4)") {{ 'DISCOVER' | translate }}
           li.menu_item.pull-left
-            a.menu_link(ng-click="gotoPage(5)") chat
+            a.menu_link(ng-click="gotoPage(5)") {{ 'CHAT' | translate }}
           li.menu_item 
-            a.menu_link(ng-click="gotoPage(6)") share
+            a.menu_link(ng-click="gotoPage(6)") {{ 'SHARE' | translate }}
       .social
         .btns
           button.btn.btn-fb
           button.btn.btn-twt
       .language
-        select.language
-          option us
-          option kr
-          option jp
-          option cn
+        select.language(ng-model="translate", ng-change="languageChange()")
+          option(value="en_US") us
+          option(value="ko_KR") 한글
+          option(value="ja_JP") jp
+          option(value="zh_TW") cn
 
 #page-1
   .maps
@@ -36,27 +36,27 @@
           p.name jordan
           p.message enhoying happy hour, 5-7!
           .bottoms
-            p.notice Coming soong for iOS & Android.
+            p.notice {{ 'COMINGSOON' | translate }}
         .popup.popup-2(ng-show="show_popups[1]")
           p.name jordan
           p.message enhoying happy hour, 5-7!
           .bottoms
-            p.notice Coming soong for iOS & Android.
+            p.notice {{ 'COMINGSOON' | translate }}
         .popup.popup-3(ng-show="show_popups[2]")
           p.name jordan
           p.message enhoying happy hour, 5-7!
           .bottoms
-            p.notice Coming soong for iOS & Android.
+            p.notice {{ 'COMINGSOON' | translate }}
         .popup.popup-4(ng-show="show_popups[3]")
           p.name jordan
           p.message enhoying happy hour, 5-7!
           .bottoms
-            p.notice Coming soong for iOS & Android.
+            p.notice {{ 'COMINGSOON' | translate }}
         .popup.popup-5(ng-show="show_popups[4]")
           p.name jordan
           p.message enhoying happy hour, 5-7!
           .bottoms
-            p.notice Coming soong for iOS & Android.
+            p.notice {{ 'COMINGSOON' | translate }}
     .tomos-area
       ul.tomos
         li.tomo.tomo-1(ng-click="show_popup(0)")
@@ -66,17 +66,17 @@
         li.tomo.tomo-5(ng-click="show_popup(4)")
   .page-container.page-1
     .contents
-      p.text-black.text-bold Welcome to Tomoni, the first activity-based discovery app!
-      p.text-black Connect around activities in your neighborhood.
+      p.text-black.text-bold {{ 'WELCOME-TITLE' | translate }}
+      p.text-black {{ 'WELCOME-CONTENT' | translate }}
     .bottom-line
 
 .page-container.page-2
   .page-left
     .content-container
-      p.title.text-light Tomo will get<br />you dates.
-      p.content.text-regular Tomo stays where you put it and make your activities visible to all nearby users, then help you communicate with your potential partners.
-      p.content.text-regular No need to fill any forms. No need to pay to get to meet new people.
-      p.content.text-regular Just drop a tomo where you ans to hang out.
+      p.title.text-light {{ 'TOMO-TITLE1' | translate }}<br />{{ 'TOMO-TITLE2' | translate }}
+      p.content.text-regular {{ 'TOMO-P1' | translate }}
+      p.content.text-regular {{ 'TOMO-P2' | translate }}
+      p.content.text-regular {{ 'TOMO-P3' | translate }}
   .page-right
     .content-container
       .img-area
@@ -91,15 +91,15 @@
         img#illu2_popup(src="../images/illu/illu2_popup.png")
   .page-right
     .content-container
-      p.title.text-light Drop and discover<br />tomos around you.
-      p.content.text-regular Tomo filters keep content interesting to you.
+      p.title.text-light {{ 'DROP-TITLE1' | translate }}<br />{{ 'DROP-TITLE2' | translate }}
+      p.content.text-regular {{ 'DROP-P' | translate }}
   .bottom-line
 
 #page-4.page-container.page-4
   .page-left
     .content-container
-      p.title.text-light Find something<br/ >interesting?<br />Chat about it.
-      p.content.text-regular Use chat to share details and meetup.
+      p.title.text-light {{ 'CHAT-TITLE1' | translate }}<br/ >{{ 'CHAT-TITLE2' | translate }}<br />{{ 'CHAT-TITLE3' | translate }}
+      p.content.text-regular {{ 'CHAT-P' | translate }}
   .page-right
     .content-container
       .img-area 
@@ -111,8 +111,8 @@
 #page-5.page-container.page-5
   .page-left
     .content-container
-      p.title.text-light Share your<br />activities on <br />Facebook and<br />Twitter.
-      p.content.text-regular Get your friends involved<br />or meet new people.
+      p.title.text-light {{ 'SHARE-TITLE1' | translate }}<br />{{ 'SHARE-TITLE2' | translate }}<br />{{ 'SHARE-TITLE3' | translate }}<br />{{ 'SHARE-TITLE4' | translate }}
+      p.content.text-regular {{ 'SHARE-P1' | translate }}<br />{{ 'SHARE-P2' | translate }}
   .page-right
     .content-container
       .img-area
@@ -122,13 +122,13 @@
 
 #page-6.page-container.page-6
   .header
-    p.text-light Like us much?
-    p.text-bold We will be coming soon!
+    p.text-light {{ 'COMINGSOON-TITLE1' | translate }}
+    p.text-bold {{ 'COMINGSOON-TITLE2' | translate }}
   .teaser-images-container
     .img_container 
       img(src="../images/illu/mocks.png")
 .bottom
   .bottom-content
-    p.text-blue Follow us on
+    p.text-blue {{ 'FOLLOWUS' | translate }}
     button.btn.btn-fb
     button.btn.btn-twt

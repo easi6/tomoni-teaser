@@ -1,0 +1,22 @@
+{
+  "MAP": "Découvrir",
+  "CHAT": "Chat",
+  "CONVERSATIONS": "Conversations",
+  "BACK": "Retourner",
+  "SEND": "Envoyer",
+  "TAKE_PHOTO": "Prendre une photo.",
+  "PHOTO_LIB": "Choisir un fichier à télécharger. ",
+  "CANCEL": "Annuler",
+  "SETTING": "Compte",
+  "LOGOUT": "Déconnexion",
+  "EDIT_PROFILE": "Modifier le Profil",
+  "MOVE": "Déplacer",
+  "MOVE_CONFIRM": "Situer",
+  "SETTING_RADIUS" : "푸시알림 반경 설정",
+  "SETTING_TXT_RADIUS": "푸시알림 반경",
+  "MALE" : "Male",
+  "FEMALE" : "FEMALE",
+  "BIRTHDAY" : "Birthday",
+  "GENDER" : "Gender",
+  "CONFIRM" : "Confirm"
+}
