@@ -80,13 +80,24 @@ angular.module('homepageApp')
       $scope.map = new google.maps.Map(document.getElementById('mapcanvas'), mapOptions);
       $scope.getIP();
 
+      //screen height 사이즈 보정
+      var screen_height = $(window).height();
+      if (screen_height < 800) {
+        //console.log('need to screen size edit');
+        var offset = 800 - screen_height; 
+        for (var i=1; i< $scope.pages_top.length - 1; i++) {
+          $scope.pages_top[i] += offset;
+        }
+      }
+      $scope.pages_top[$scope.pages_top.length - 1] = $(document).height() - screen_height - $scope.anim_threshold;
+
       $(document).scroll(function(e) {
         if (!$scope.is_scrolling) {
           //console.log('prev pos = ' + $scope.prev_pos);
           var cur_page = $scope.getCurPage();
           //console.log('cur page = ' + cur_page);
           var top = $(this).scrollTop();
-          if (cur_page <= 4 && top > 0 && top > $scope.prev_pos + $scope.anim_threshold) {
+          if (cur_page <= 5 && top > 0 && top > $scope.prev_pos + $scope.anim_threshold) {
             //console.log('scroll to next');
             $scope.is_scrolling = true;
             $scope.prev_pos = top;
