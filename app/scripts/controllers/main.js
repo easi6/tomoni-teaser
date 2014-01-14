@@ -50,10 +50,6 @@ angular.module('homepageApp')
     $scope.anim_duration = 600;
     $scope.anim_threshold = 40;
 
-    $scope.gotoPage = function(page) {
-      $location.hash("page-" + page);
-    };
-
     $scope.getCurPage = function() {
       var scrollTop = $(document).scrollTop();
       for (var top in $scope.pages_top) {
@@ -98,20 +94,21 @@ angular.module('homepageApp')
           //console.log('cur page = ' + cur_page);
           var top = $(this).scrollTop();
           if (cur_page <= 5 && top > 0 && top > $scope.prev_pos + $scope.anim_threshold) {
-            //console.log('scroll to next');
-            $scope.is_scrolling = true;
+            $scope.gotoPage(cur_page);
             $scope.prev_pos = top;
-            disable_scroll();
-            $scope.scrollToPage(cur_page);
           } else if (cur_page > 0 && top < $scope.prev_pos - $scope.anim_threshold) {
-            //console.log('scroll to prev');
-            $scope.is_scrolling = true;
+            $scope.gotoPage(cur_page - 1);
             $scope.prev_pos = top;
-            disable_scroll();
-            $scope.scrollToPage(cur_page - 1);
           }
         }
       });
+    };
+
+    $scope.gotoPage = function(page) {
+      $scope.is_scrolling = true;
+      $scope.prev_pos = top;
+      disable_scroll();
+      $scope.scrollToPage(page);
     };
 
     $scope.languageChange = function(language) {
