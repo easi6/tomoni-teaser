@@ -41,7 +41,6 @@ function enable_scroll() {
 
 angular.module('homepageApp')
   .controller('MainCtrl', function ($scope, $location, $translate, $http) {
-    $scope.translate = "en_US";
     $scope.map = null;
     $scope.show_popups = [false, false, true, false, false];
     $scope.is_scrolling = false;
@@ -57,7 +56,6 @@ angular.module('homepageApp')
 
     $scope.getCurPage = function() {
       var scrollTop = $(document).scrollTop();
-      //console.log('get cur page! scroll top = ' + scrollTop);
       for (var top in $scope.pages_top) {
         if (scrollTop < $scope.pages_top[top]) 
           return top;
@@ -66,7 +64,6 @@ angular.module('homepageApp')
     };
 
     $scope.initialize = function() {
-      console.log('initialize!');
       var mapOptions = {
         center: new google.maps.LatLng(37.57, 127.12123),
         zoom: 13,
@@ -90,13 +87,13 @@ angular.module('homepageApp')
           //console.log('cur page = ' + cur_page);
           var top = $(this).scrollTop();
           if (cur_page <= 4 && top > 0 && top > $scope.prev_pos + $scope.anim_threshold) {
-            console.log('scroll to next');
+            //console.log('scroll to next');
             $scope.is_scrolling = true;
             $scope.prev_pos = top;
             disable_scroll();
             $scope.scrollToPage(cur_page);
           } else if (cur_page > 0 && top < $scope.prev_pos - $scope.anim_threshold) {
-            console.log('scroll to prev');
+            //console.log('scroll to prev');
             $scope.is_scrolling = true;
             $scope.prev_pos = top;
             disable_scroll();
@@ -106,16 +103,38 @@ angular.module('homepageApp')
       });
     };
 
-    $scope.languageChange = function() {
-      $translate.uses($scope.translate);
+    $scope.languageChange = function(language) {
+      switch(language) {
+        case "us" :
+          $translate.uses("en_US");
+          break;
+        case "kr" :
+          $translate.uses("ko_KR");
+          break;
+        case "jp" :
+          $translate.uses("ja_JP");
+          break;
+        case "cn" :
+          $translate.uses("zh_TW");
+          break;
+        case "tw" :
+          $translate.uses("zh_TW");
+          break;
+        default:
+          $translate.uses("en_US");
+          language = "us";
+          break;
+      }
+      var target_html = language + "<img src=\"../images/icns/" + language + ".png\">";
+      $('a.dropdown-toggle').html(target_html);
     };
 
     $scope.scrollToPage = function(to_page) {
-      console.log(to_page);
+      //console.log(to_page);
       if (to_page < 0) 
         to_page += 6;
       $('body').animate({scrollTop: $scope.pages_top[to_page]}, $scope.anim_duration, function() {
-        console.log("scroll to page complete!"); 
+        //console.log("scroll to page complete!"); 
         $scope.is_scrolling = false;
         $scope.prev_pos = $scope.pages_top[to_page];
         $scope.animAfterScroll(to_page);
@@ -171,7 +190,7 @@ angular.module('homepageApp')
 
     $scope.getIP = function() {
       $http.get("http://smartbiolab.com:8000").success( function(data) {
-        console.log(data.ip);
+        //console.log(data.ip);
         $scope.getLocationByIP(data.ip);
       });
     };
@@ -182,6 +201,9 @@ angular.module('homepageApp')
         if (data.geoplugin_status != 404) {
           var new_loc = new google.maps.LatLng(data.geoplugin_latitude, data.geoplugin_longitude);
           $scope.map.setCenter(new_loc);
+          // contry code 
+          var contry_code = data.geoplugin_countryCode;
+          $scope.languageChange(contry_code.toLowerCase());
         }
       }).error(function(err) { console.log(err); return null;});
     };

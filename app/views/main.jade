@@ -18,11 +18,22 @@
           button.btn.btn-fb
           button.btn.btn-twt
       .language
-        select.language(ng-model="translate", ng-change="languageChange()")
-          option(value="en_US") us
-          option(value="ko_KR") 한글
-          option(value="ja_JP") jp
-          option(value="zh_TW") cn
+        .dropdown
+          a.dropdown-toggle us
+            img(src="../images/icns/us.png")
+          ul.dropdown-menu(role="menu", aria-labelledby="dLabel")
+            li(role="presentation") 
+              a(role="menuitem", ng-click="languageChange('us')") us
+                img(src="../images/icns/us.png")
+            li(role="presentation")
+              a(role="menuitem", ng-click="languageChange('kr')") kr
+                img(src="../images/icns/kr.png")
+            li(role="presentation") 
+              a(role="menuitem", ng-click="languageChange('jp')") jp
+                img(src="../images/icns/jp.png")
+            li(role="presentation")
+              a(role="menuitem", ng-click="languageChange('tw')") cn
+                img(src="../images/icns/tw.png")
 
 #page-1
   .maps

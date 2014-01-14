@@ -115,11 +115,40 @@ p {
       .language {
         width: 114px;
         height: 60px;
-        padding-top: 15px;
+        padding-top: 5px;
         float: left;
-        select {
-          width: 100px;
-          margin-left: 10px;
+        .dropdown {
+          a {
+            width: 114px;
+            font-size: 1.25em;
+            color: #929292;
+            background-repeat: no-repeat;
+            background-position: right;
+            display: block;
+            height: 45px;
+            padding-top: 5px;
+            padding-left: 25px;
+            padding-right: 0px;
+            position: relative;
+            img {
+              position: absolute;
+              margin-left: 15px;
+              top: 7px;
+              left: 55px;
+            }
+          }
+          a:hover {
+            background: transparent;
+            cursor: pointer;
+            text-decoration: none;
+          }
+          ul.dropdown-menu {
+            width: 114px;
+            min-width: 80px;
+            padding: 0px;
+            margin: 0px;
+            font-size: 1em;
+          }
         }
       }
     }
