@@ -200,23 +200,22 @@ angular.module('homepageApp')
     };
 
     $scope.getIP = function() {
-      $http.get("http://smartbiolab.com:8000").success( function(data) {
-        //console.log(data.ip);
+      $http.jsonp("http://smartbiolab.com:8000?callback=JSON_CALLBACK").success( function(data) {
         $scope.getLocationByIP(data.ip);
       });
     };
 
+
     $scope.getLocationByIP = function(ip) {
-      $http.get("http://www.geoplugin.net/json.gp?ip=" + ip).success( function(data) {
-        console.log(data);
-        if (data.geoplugin_status != 404) {
-          var new_loc = new google.maps.LatLng(data.geoplugin_latitude, data.geoplugin_longitude);
+      $http.jsonp("http://ipinfo.io/" + ip + "/json?callback=JSON_CALLBACK").success( function(data) {
+        if (data) 
+          var lat = data.loc.split(',')[0];
+          var lng = data.loc.split(',')[1];
+          var new_loc = new google.maps.LatLng(lat, lng);
           $scope.map.setCenter(new_loc);
-          // contry code 
-          var contry_code = data.geoplugin_countryCode;
-          $scope.languageChange(contry_code.toLowerCase());
-        }
-      }).error(function(err) { console.log(err); return null;});
+          var country = data.country;
+          $scope.languageChange(country.toLowerCase());
+      });
     };
 
     $scope.show_popup = function(popup_idx) {
