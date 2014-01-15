@@ -19,27 +19,22 @@
           button.btn.btn-twt
       .language
         .dropdown
-          a.dropdown-toggle us
-            img(src="../images/icns/us.png")
+          a.dropdown-toggle english
           ul.dropdown-menu(role="menu", aria-labelledby="dLabel")
             li(role="presentation") 
-              a(role="menuitem", ng-click="languageChange('us')") us
-                img(src="../images/icns/us.png")
+              a(role="menuitem", ng-click="languageChange('us')") english
             li(role="presentation")
-              a(role="menuitem", ng-click="languageChange('kr')") kr
-                img(src="../images/icns/kr.png")
+              a(role="menuitem", ng-click="languageChange('kr')") 한국어
             li(role="presentation") 
-              a(role="menuitem", ng-click="languageChange('jp')") jp
-                img(src="../images/icns/jp.png")
+              a(role="menuitem", ng-click="languageChange('jp')") 日本語
             li(role="presentation")
-              a(role="menuitem", ng-click="languageChange('tw')") cn
-                img(src="../images/icns/tw.png")
+              a(role="menuitem", ng-click="languageChange('tw')") 中文
 
 #page-1
   .maps
     #mapcanvas(ng-init="initialize()")
     .mapoverlay
-      img.mapoverlay(src="../images/dark_overlay_bg.png")
+      img.mapoverlay(src="../images/dark_overlay_bg2.png")
   .tomos
     .popup-area
       .popups

@@ -112,29 +112,32 @@ angular.module('homepageApp')
     };
 
     $scope.languageChange = function(language) {
+      var lang_str = "english";
       switch(language) {
         case "us" :
           $translate.uses("en_US");
           break;
         case "kr" :
           $translate.uses("ko_KR");
+          lang_str = "한국어"
           break;
         case "jp" :
           $translate.uses("ja_JP");
+          lang_str = "日本語"
           break;
         case "cn" :
           $translate.uses("zh_TW");
+          lang_str = "中文"
           break;
         case "tw" :
           $translate.uses("zh_TW");
+          lang_str = "中文"
           break;
         default:
           $translate.uses("en_US");
-          language = "us";
           break;
       }
-      var target_html = language + "<img src=\"../images/icns/" + language + ".png\">";
-      $('a.dropdown-toggle').html(target_html);
+      $('a.dropdown-toggle').html(lang_str);
     };
 
     $scope.scrollToPage = function(to_page) {
@@ -163,9 +166,9 @@ angular.module('homepageApp')
             setTimeout(function() {
               $('#chat3').show();
               return $scope.animFinish(cur_page);
-            }, 1000);
-          }, 1000);
-        }, 500);
+            }, 500);
+          }, 500);
+        }, 250);
       } else if (cur_page == 4) {
         $('img.illu4_fadein').fadeIn(500, function(){ return $scope.animFinish(cur_page);});
       } else {
