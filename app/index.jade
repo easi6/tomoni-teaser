@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+  head
+    title Tomoni Teaser
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="description", content="")
+    meta(name="viewport", content="width=device-width")
+    <!-- build:css styles/main.css -->
+    link(rel="stylesheet", href="styles/main.css")
+    link(rel="stylesheet", href="styles/page.css")
+    <!-- endbuild -->
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300&subset=latin,greek', rel='stylesheet')
+
+  body(ng-app="homepageApp")
+    #cloud-container
+      #backround
+      .container(ng-view="")
+
+    script(src="http://maps.googleapis.com/maps/api/js?key=AIzaSyATcWTTUU8nTH3H9rdARvM0bPHhZV44tBw&sensor=false")
+    script(src="bower_components/jquery/jquery.js")
+    script(src="bower_components/angular/angular.js")
+
+    <!-- build:js scripts/plugins.js -->
+    script(src="bower_components/sass-bootstrap/js/dropdown.js")
+    script(src="bower_components/angular-translate/angular-translate.js")
+    script(src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js")
+    script(src="bower_components/angular-ui-bootstrap/src/dropdownToggle/dropdownToggle.js")
+    <!-- endbuild -->
+
+    <!-- build:js scripts/modules.js -->
+    script(src="bower_components/angular-resource/angular-resource.js")
+    script(src="bower_components/angular-cookies/angular-cookies.js")
+    script(src="bower_components/angular-sanitize/angular-sanitize.js")
+    script(src="bower_components/angular-route/angular-route.js")
+    <!-- endbuild -->
+
+    <!-- bulid:js scripts/application.js -->
+    script(src="scripts/app.js")
+    script(src="scripts/controllers/main.js")
+    //script(src="scripts/templates.js")
+    <!-- endbuild -->
