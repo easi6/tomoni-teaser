@@ -18,6 +18,17 @@
   "FEMALE" : "FEMALE",
   "BIRTHDAY" : "Birthday",
   "GENDER" : "Gender",
-  "CONFIRM" : "Confirm"
+  "CONFIRM" : "Confirm",
+  "JORDAN" : "Jordan",
+  "NESTOR" : "Nestor",
+  "KYEONGSIK" : "Kyeongsik",
+  "MARISA" : "Marisa",
+  "MOMO" : "Momo",
+  "TOMO_EXERCISE" : "Join my riverside run at 6!",
+  "TOMO_DATE_1" : "Officially single!",
+  "TOMO_DATE_2" : "Need somebody to talk to",
+  "TOMO_EAT" : "Let's get some sushi around 7",
+  "TOMO_BEER" : "Salsa and beer rock"
+
 }
 
