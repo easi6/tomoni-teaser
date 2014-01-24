@@ -84,6 +84,12 @@ angular.module('homepageApp')
         for (var i=1; i< $scope.pages_top.length - 1; i++) {
           $scope.pages_top[i] += offset;
         }
+      } else {
+        var offset = (screen_height - 800) / 2;
+        console.log(offset);
+        for (var i=1; i< $scope.pages_top.length - 1; i++) {
+          $scope.pages_top[i] -= offset;
+        }
       }
       $scope.pages_top[$scope.pages_top.length - 1] = $(document).height() - screen_height - $scope.anim_threshold;
 
