@@ -86,7 +86,7 @@ angular.module('homepageApp')
         }
       } else {
         var offset = (screen_height - 800) / 2;
-        console.log(offset);
+        //console.log(offset);
         for (var i=1; i< $scope.pages_top.length - 1; i++) {
           $scope.pages_top[i] -= offset;
         }
@@ -150,7 +150,7 @@ angular.module('homepageApp')
       //console.log(to_page);
       if (to_page < 0) 
         to_page += 6;
-      $('body').animate({scrollTop: $scope.pages_top[to_page]}, $scope.anim_duration, function() {
+      $('body, html').animate({scrollTop: $scope.pages_top[to_page]}, $scope.anim_duration, function() {
         //console.log("scroll to page complete!"); 
         $scope.is_scrolling = false;
         $scope.prev_pos = $scope.pages_top[to_page];
