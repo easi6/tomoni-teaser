@@ -64,7 +64,7 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
+        hostname: '0.0.0.0',
         livereload: 35729
       },
       livereload: {
@@ -98,6 +98,9 @@ module.exports = function (grunt) {
 
     jade: {
       compile: {
+        options: {
+          pretty: true
+        },
         files: {
           '.tmp/index.html': ['app/index.jade'],
           '.tmp/views/main.html' : ['app/views/main.jade']
@@ -248,7 +251,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '.tmp/scripts',
-          src: 'application.js',
+          src: '*.js',
           dest: '.tmp/scripts'
         }]
       }
@@ -275,17 +278,17 @@ module.exports = function (grunt) {
             'bower_components/**/*',
             'images/{,*/}*.png',
             'fonts/*',
-            'scripts/l10n/*.json',
-            'scripts/{,*/}*.js'
+            'scripts/l10n/*.json'
+            //'scripts/{,*/}*.js'
           ]
-        }, {
+        },/* {
           expand: true,
           cwd: '.tmp/styles',
           dest: '<%= yeoman.dist %>/styles',
           src: [
             '*.css'
           ]
-        },{
+        },*/{
           expand: true,
           cwd: '.tmp',
           dest: '<%= yeoman.dist %>',
@@ -329,7 +332,20 @@ module.exports = function (grunt) {
        }
      },
      uglify: {
+       options: {
+         compress: {
+           drop_console: true
+         }
+       },
        dist: {
+         files:[{
+           expand: true,
+           cwd: '.tmp/scripts',
+           src: '*.js',
+           dest: '<%= yeoman.dist %>/scripts'
+         }
+         ]
+/*
          files: {
            '<%= yeoman.dist %>/scripts/application.js': [
              '.tmp/scripts/application.js'
@@ -341,6 +357,7 @@ module.exports = function (grunt) {
              '.tmp/scripts/modules.js'
            ]
          }
+         */
        }
      },
      concat: {
@@ -388,13 +405,13 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'autoprefixer',
     'copy:dist',
-    //'concat',
-    //'ngmin',
+    'concat',
+    'ngmin',
     //'cdnify',
-    //'uglify',
-    //'cssmin',
+    'uglify:dist',
+    'cssmin:dist',
     //'rev',
-    //'usemin'
+    'usemin'
   ]);
 
   grunt.registerTask('default', [
