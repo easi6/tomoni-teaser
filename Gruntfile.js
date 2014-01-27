@@ -362,15 +362,15 @@ module.exports = function (grunt) {
      },
      concat: {
        plugins: {
-         src: ['app/bower_components/sass-bootstrap/js/dropdown.js', 'app/bower_components/angular-translate/angular-translate.js', 'app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js', 'bower_components/angular-ui-bootstrap/src/dropdownToggle/dropdownToggle.js'],
+         src: ['app/bower_components/sass-bootstrap/js/dropdown.js', 'app/bower_components/angular-translate/angular-translate.js', 'app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js', 'app/bower_components/angular-ui-bootstrap/src/dropdownToggle/dropdownToggle.js'],
          dest: '.tmp/scripts/plugins.js'
        },
        module: {
-         src: ['app/bower_components/angular-resource/angular-resource.js', 'app/bower_components/angular-route/angular-route.js', 'app/bower_components/angular-cookies/angular-cookies.js'],
+         src: ['app/bower_components/angular-resource/angular-resource.js', 'app/bower_components/angular-route/angular-route.js', 'app/bower_components/angular-cookies/angular-cookies.js', 'app/bower_components/angular-sanitize/angular-sanitize.js'],
          dest: '.tmp/scripts/modules.js'
        },
        dist: {
-         src: ['app/scripts/app.js', '.tmp/scripts/templates.js', 'app/scripts/controllers/main.js'],
+         src: ['app/scripts/app.js', 'app/scripts/controllers/main.js'],
          dest: '.tmp/scripts/application.js'
        }
      },
