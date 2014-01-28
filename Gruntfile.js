@@ -279,7 +279,7 @@ module.exports = function (grunt) {
             'images/{,*/}*.png',
             'fonts/*',
             'scripts/l10n/*.json',
-            'Presskits/*'
+            'Presskits.zip'
             //'scripts/{,*/}*.js'
           ]
         },/* {
