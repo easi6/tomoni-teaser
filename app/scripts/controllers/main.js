@@ -49,7 +49,7 @@ angular.module('homepageApp')
     $scope.prev_pos = 0;
     $scope.anim_duration = 600;
     $scope.anim_threshold = 40;
-    $scope.preekitURL = "/Presskits/Presskit_slides.pdf";
+    $scope.presskitURL = "/Presskits/Tomoni Press Kit (EN).zip";
 
     $scope.getCurPage = function() {
       var scrollTop = $(document).scrollTop();
@@ -123,35 +123,34 @@ angular.module('homepageApp')
       switch(language) {
         case "us" :
           $translate.uses("en_US");
-          $scope.presskitURL = "/Presskits/Presskit_slides.pdf";
+          $scope.presskitURL = "/Presskits/Tomoni Press Kit (EN).zip";
           break;
         case "kr" :
           $translate.uses("ko_KR");
           lang_str = "한국어"
-          $scope.presskitURL = "/Presskits/Presskit_slides_Korean.pdf";
+          $scope.presskitURL = "/Presskits/Tomoni Press Kit (KR).zip";
           break;
         case "jp" :
           $translate.uses("ja_JP");
           lang_str = "日本語"
-          $scope.presskitURL = "/Presskits/Presskit_slides_Jap.pdf";
+          $scope.presskitURL = "/Presskits/Tomoni Press Kit (JP).zip";
           break;
         case "cn" :
           $translate.uses("zh_TW");
           lang_str = "中文"
-          $scope.presskitURL = "/Presskits/Presskit_slides_chn.pdf";
+          $scope.presskitURL = "/Presskits/Tomoni Press Kit (CN).zip";
           break;
         case "tw" :
           $translate.uses("zh_TW");
           lang_str = "中文"
-          $scope.presskitURL = "/Presskits/Presskit_slides_chn.pdf";
+          $scope.presskitURL = "/Presskits/Tomoni Press Kit (CN).zip";
           break;
         default:
           $translate.uses("en_US");
-          $scope.presskitURL = "/Presskits/Presskit_slides.pdf";
+          $scope.presskitURL = "/Presskits/Tomoni Press Kit (EN).zip";
           break;
       }
       $('a.dropdown-toggle').html(lang_str);
-      $('a.presskit').attr('href', $scope.presskitURL);
     };
 
     $scope.scrollToPage = function(to_page) {
