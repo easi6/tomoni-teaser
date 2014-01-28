@@ -218,7 +218,6 @@ angular.module('homepageApp')
       });
     };
 
-
     $scope.getLocationByIP = function(ip) {
       $http.jsonp("http://ipinfo.io/" + ip + "/json?callback=JSON_CALLBACK").success( function(data) {
         if (data) 
