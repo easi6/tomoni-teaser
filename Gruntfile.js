@@ -278,7 +278,8 @@ module.exports = function (grunt) {
             'bower_components/**/*',
             'images/{,*/}*.png',
             'fonts/*',
-            'scripts/l10n/*.json'
+            'scripts/l10n/*.json',
+            'Presskits/*'
             //'scripts/{,*/}*.js'
           ]
         },/* {

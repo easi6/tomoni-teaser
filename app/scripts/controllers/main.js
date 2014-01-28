@@ -49,6 +49,7 @@ angular.module('homepageApp')
     $scope.prev_pos = 0;
     $scope.anim_duration = 600;
     $scope.anim_threshold = 40;
+    $scope.preekitURL = "/Presskits/Presskit_slides.pdf";
 
     $scope.getCurPage = function() {
       var scrollTop = $(document).scrollTop();
@@ -122,28 +123,35 @@ angular.module('homepageApp')
       switch(language) {
         case "us" :
           $translate.uses("en_US");
+          $scope.presskitURL = "/Presskits/Presskit_slides.pdf";
           break;
         case "kr" :
           $translate.uses("ko_KR");
           lang_str = "한국어"
+          $scope.presskitURL = "/Presskits/Presskit_slides_Korean.pdf";
           break;
         case "jp" :
           $translate.uses("ja_JP");
           lang_str = "日本語"
+          $scope.presskitURL = "/Presskits/Presskit_slides_Jap.pdf";
           break;
         case "cn" :
           $translate.uses("zh_TW");
           lang_str = "中文"
+          $scope.presskitURL = "/Presskits/Presskit_slides_chn.pdf";
           break;
         case "tw" :
           $translate.uses("zh_TW");
           lang_str = "中文"
+          $scope.presskitURL = "/Presskits/Presskit_slides_chn.pdf";
           break;
         default:
           $translate.uses("en_US");
+          $scope.presskitURL = "/Presskits/Presskit_slides.pdf";
           break;
       }
       $('a.dropdown-toggle').html(lang_str);
+      $('a.presskit').attr('href', $scope.presskitURL);
     };
 
     $scope.scrollToPage = function(to_page) {
