@@ -49,7 +49,7 @@ angular.module('homepageApp')
     $scope.prev_pos = 0;
     $scope.anim_duration = 600;
     $scope.anim_threshold = 40;
-    $scope.preekitURL = "/Presskits.zip";
+    $scope.presskitURL = "/Presskits.zip";
 
     $scope.getCurPage = function() {
       var scrollTop = $(document).scrollTop();
