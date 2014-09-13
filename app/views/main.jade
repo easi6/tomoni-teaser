@@ -134,6 +134,10 @@
 #page-6.page-container.page-6
   .header
     p.text-light {{ 'COMINGSOON-TITLE1' | translate }}
+      a.app_link(href="{{ 'APPSTORE_URL' | translate }}", target="_blank")
+        img(src="../images/appke70px.png")
+      a.app_link(href="{{ 'GOOGLESTORE_URL' | translate }}", target="_blank")
+        img(src="../images/Play-Store70px.png")
     p.text-bold {{ 'COMINGSOON-TITLE2' | translate }}
   .teaser-images-container
     .img_container 

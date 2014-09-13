@@ -36,5 +36,7 @@
   "TOMO_DATE_1" : "Officially single!",
   "TOMO_DATE_2" : "Need somebody to talk to",
   "TOMO_EAT" : "Let's get some sushi around 7",
-  "TOMO_BEER" : "Salsa and beer rock"
+  "TOMO_BEER" : "Salsa and beer rock",
+  "GOOGLESTORE_URL" : "https://play.google.com/store/apps/details?id=com.easi6.tomoni&hl=en",
+  "APPSTORE_URL" : "https://itunes.apple.com/us/app/tomoni/id826972115?mt=8"
 }

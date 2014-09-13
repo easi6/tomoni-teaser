@@ -36,5 +36,7 @@
   "TOMO_DATE_1" : "이제 싱글이다!",
   "TOMO_DATE_2" : "지금 얘기 할 사람이 필요해",
   "TOMO_EAT" : "7시쯤에 초밥 먹으러 갑시다.",
-  "TOMO_BEER" : "한 잔의 맥주와 살사 댄스"
+  "TOMO_BEER" : "한 잔의 맥주와 살사 댄스",
+  "GOOGLESTORE_URL" : "https://play.google.com/store/apps/details?id=com.easi6.tomoni&hl=ko",
+  "APPSTORE_URL" : "https://itunes.apple.com/kr/app/tomoni/id826972115?mt=8"
 }
