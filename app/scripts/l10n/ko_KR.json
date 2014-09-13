@@ -3,7 +3,7 @@
   "DISCOVER" : "discover",
   "CHAT" : "chat",
   "SHARE" : "share",
-  "COMINGSOON" : "iOS와 Android로 곧 출시 될 에정입니다.",
+  "COMINGSOON" : "앱스토어와 구글스토어에서 다운하세요.",
   "WELCOME-TITLE" : "환영합니다! 혼자 놀기 싫은 사람들을 위한 앱, 토모니입니다.",
   "WELCOME-CONTENT" : "혼자가 싫다면, 토모니를 통해서 주변에 있는 '꺼리'를 찾아보세요.",
   "TOMO-TITLE1" : "토모는 함께노는걸",
@@ -25,7 +25,7 @@
   "SHARE-P1" : "함께 미쳐봤던 친구라면, 당연히 연락이 올겁니다.",
   "SHARE-P2" : "새로운 친구들도 물론 함께 할 수 있을 거구요.",
   "COMINGSOON-TITLE1" : "마음에 드시나요?",
-  "COMINGSOON-TITLE2" : "Tōmōni coming soon!",
+  "COMINGSOON-TITLE2" : "지금 다운로드하세요!",
   "FOLLOWUS" : "Follow us on",
   "JORDAN" : "조단",
   "NESTOR" : "네스터",
@@ -36,5 +36,7 @@
   "TOMO_DATE_1" : "이제 싱글이다!",
   "TOMO_DATE_2" : "지금 얘기 할 사람이 필요해",
   "TOMO_EAT" : "7시쯤에 초밥 먹으러 갑시다.",
-  "TOMO_BEER" : "한 잔의 맥주와 살사 댄스"
+  "TOMO_BEER" : "한 잔의 맥주와 살사 댄스",
+  "GOOGLESTORE_URL" : "https://play.google.com/store/apps/details?id=com.easi6.tomoni&hl=ko",
+  "APPSTORE_URL" : "https://itunes.apple.com/kr/app/tomoni/id826972115?mt=8"
 }

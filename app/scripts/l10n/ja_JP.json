@@ -36,5 +36,7 @@
   "TOMO_DATE_1" : "もうシングルだ！",
   "TOMO_DATE_2" : "話し相手がほしいです。",
   "TOMO_EAT" : "一緒にごはんどう？",
-  "TOMO_BEER" : "サルサダンスとビール！"
+  "TOMO_BEER" : "サルサダンスとビール！",
+  "GOOGLESTORE_URL" : "https://play.google.com/store/apps/details?id=com.easi6.tomoni&hl=ja",
+  "APPSTORE_URL" : "https://itunes.apple.com/jp/app/tomoni/id826972115?mt=8"
 }

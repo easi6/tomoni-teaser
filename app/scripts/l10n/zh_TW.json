@@ -36,5 +36,7 @@
   "TOMO_DATE_1" : "我现在正式单身！",
   "TOMO_DATE_2" : "找人聊天！",
   "TOMO_EAT" : "晚上7点吃寿司，求陪同。。。",
-  "TOMO_BEER" : "跳萨尔萨舞后喝啤酒"
+  "TOMO_BEER" : "跳萨尔萨舞后喝啤酒",
+  "GOOGLESTORE_URL" : "https://play.google.com/store/apps/details?id=com.easi6.tomoni&hl=zh",
+  "APPSTORE_URL" : "https://itunes.apple.com/tw/app/tomoni/id826972115?mt=8"
 }
