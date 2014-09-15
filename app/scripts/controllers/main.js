@@ -120,6 +120,13 @@ angular.module('homepageApp')
       });
     };
 
+    $scope.goToStoreLink = function() {
+      $scope.is_scrolling = true;
+      $('body, html').animate({scrollTop: 3920}, $scope.anim_duration, function() {
+        $scope.is_scrolling = false;
+      });
+    };
+
     $scope.gotoPage = function(page) {
       $scope.is_scrolling = true;
       $scope.prev_pos = top;
