@@ -40,7 +40,7 @@ function enable_scroll() {
 }
 
 angular.module('homepageApp')
-  .controller('MainCtrl', function ($scope, $location, $translate, $http) {
+  .controller('MainCtrl', function ($scope, $window, $location, $translate, $http) {
     $scope.map = null;
     $scope.show_popups = [false, false, true, false, false];
     $scope.is_scrolling = false;
@@ -75,7 +75,16 @@ angular.module('homepageApp')
       };
 
       $scope.map = new google.maps.Map(document.getElementById('mapcanvas'), mapOptions);
-      $scope.getIP();
+      if ($window.localStorage) {
+        var location = $window.localStorage.getItem("location");
+        if (location) {
+          $scope.languageChange(location);
+        } else {
+          $scope.getIP();
+        }
+      } else {
+        $scope.getIP();
+      }
 
       //screen height 사이즈 보정
       var screen_height = $(window).height();
@@ -213,7 +222,7 @@ angular.module('homepageApp')
     };
 
     $scope.getIP = function() {
-      $http.jsonp("http://smartbiolab.com:8000?callback=JSON_CALLBACK").success( function(data) {
+      $http.jsonp("http://jsonip.com?callback=JSON_CALLBACK").success( function(data) {
         $scope.getLocationByIP(data.ip);
       });
     };
@@ -227,6 +236,9 @@ angular.module('homepageApp')
           $scope.map.setCenter(new_loc);
           var country = data.country;
           $scope.languageChange(country.toLowerCase());
+          if ($window.localStorage) {
+            $window.localStorage.setItem("location", country.toLowerCase());
+          }
       });
     };
 
