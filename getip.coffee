@@ -1,11 +1,12 @@
 http = require('http')
 url = require('url')
 
-port = 8000
+port = 8005
 
 server = http.createServer(
   (req, res) ->
-    client_ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+    console.log(req.headers)
+    client_ip = req.headers['x-real-ip'] || req.connection.remoteAddress
     url_parts = url.parse(req.url, true)
     query = url_parts.query
     json_str = "{ \"ip\": \"#{client_ip}\"}"
